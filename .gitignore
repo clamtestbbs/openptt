@@ -1,2 +1,4 @@
 tmp
 pttbbs.conf
+*.a
+*.o
