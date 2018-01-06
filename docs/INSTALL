@@ -15,14 +15,25 @@
    bbs:*:99:
 
 4. 執行 mkdir /home/bbs
-5. 執行 chown bbs.bbs /home/bbs
+5. 執行 chown bbs:bbs /home/bbs
 6. 執行 chmod 700 /home/bbs
 
 然後切換成 bbsadm 的身份
 
-7. 取得解開 pttbbs-VERSION.tar.gz (任何目錄下皆可).
-8. 執行 cd pttbbs
-9. 如果之前沒有設定過 pttbbs.conf 的話, 請 cp sample/pttbbs.conf pttbbs.conf
+ 7. 您可以透過下列方式下載到本站的原始程式碼:
+    https://github.com/clamtestbbs/openptt
+
+    git clone https://github.com/clamtestbbs/openptt
+
+    ( 原始未經任何修改的源碼請自行至 
+      http://ftp.isu.edu.tw/pub/Unix/BBS/Ptt/openptt/ 取得 )
+
+    您可以在該目錄下直接透過 git pull 更新至 openptt 較新的源碼. 如:
+    cd /home/bbs/openptt; git pull; git rebase
+
+ 8. 切換到 openptt 的目錄下 ( cd /home/bbs/openptt )
+
+ 9. 如果之前沒有設定過 pttbbs.conf 的話, 請 cp sample/pttbbs.conf pttbbs.conf
 10. 修改 pttbbs.conf
 11. 執行 make OSTYPE=FreeBSD BBSHOME=/home/bbs all install
     (Linux使用者請把 "FreeBSD" 改成 "linux")

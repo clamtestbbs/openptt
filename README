@@ -1,12 +1,10 @@
 
-快速安裝方法請參閱 INSTALL
+快速安裝方法請參閱 docs/INSTALL
 
-常見問題及 sendmail.cf 的設法請見 FAQ
+常見問題及 sendmail.cf 的設法請見 docs/FAQ
 
 sample 下有 crontab 及 rc.local 的範例
 
-有任何問題請mail給 pttbbs@ptt2.csie.ntu.edu.tw
-
-也可到 ptt2.csie.ntu.edu.tw / ptt2.twbbs.org 的 PttSrc 板詢問
+有任何問題請到 ptt2.cc 的 PttSrc 板詢問
 
 謝謝 :)
