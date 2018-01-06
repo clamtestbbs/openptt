@@ -798,7 +798,7 @@ static void mailtitle() {
 	sprintf(buf,"(®e¶q:%d/%dk %d/%d½g)", mailsum, mailsumlimit,
 		mailkeep, mailmaxkeep);
     }
-    sprintf(buf, "%s%*s\033[m", buf, 29 - strlen(buf), "");
+    sprintf(buf, "%s%*s\033[0m", buf, 29 - strlen(buf), "");
     outs(buf);
 }
 

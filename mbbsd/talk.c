@@ -1547,7 +1547,7 @@ static void pickup_user() {
 	    prints("  排序：[%s] 上站人數：%-4d\033[1;32m我的朋友：%-3d"
 		   "\033[33m與我為友：%-3d\033[36m板友：%-4d\033[31m壞人："
 		   "%-2d\033[m\n"
-		   "\033[7m  %s P%c代號         %-17s%-17s%-13s%-10s\033[m\n",
+		   "\033[7m  %s P%c代號         %-17s%-17s%-13s%-10s\033[0m\n",
 		   msg_pickup_way[pickup_way], actor, friends_number,
 		   override_number, bfriends_number,
 		   badman,

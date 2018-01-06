@@ -536,7 +536,7 @@ static void show_brdlist(int head, int clsflag, int newflag) {
 	showtitle("看板列表", BBSName);
 	prints("[←]主選單 [→]閱\讀 [↑↓]選擇 [y]載入 [S]排序 [/]搜尋 "
 	       "[TAB]文摘‧看板 [h]求助\n"
-	       "\033[7m%-20s 類別 轉信%-31s投票 板    主     \033[m",
+	       "\033[7m%-20s 類別 轉信%-31s投票 板    主     \033[0m",
 	       newflag ? "總數 未讀 看  板" : "  編號  看  板",
 	       "  中   文   敘   述");
 	move(b_lines, 0);

@@ -149,7 +149,7 @@ static void readtitle() {
     showtitle(currBM, brd_title);
     outs("[←]離開 [→]閱\讀 [^P]發表文章 [b]備忘錄 [d]刪除 [z]精華區 "
 	 "[TAB]文摘 [h]elp\n\033[7m  編號   日 期  作  者       文  章  標  題"
-	 "                                   \033[m");
+	 "                                   \033[0m");
 }
 
 extern int brc_num;
