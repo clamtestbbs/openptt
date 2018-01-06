@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <sys/param.h>
 #include <sys/types.h>
-#include <utmp.h>
+//#include <utmp.h>
 #include <pwd.h>
 #include <syslog.h>
 #include <fcntl.h>
@@ -14,12 +14,22 @@
 #include <sys/uio.h>
 #include "config.h"
 
+#include <utmpx.h>
+
+#define _PATH_UTMP      "/var/run/utx.active" 
+#define _PATH_WTMP      "/var/log/utx.lastlogin" 
+#define _PATH_LASTLOG   "/var/log/lastlog" 
+ 
+#define UT_NAMESIZE     32 
+#define UT_LINESIZE     8 
+#define UT_HOSTSIZE     256 
+
 /* fill the hid with from hostname */
 void gethid(char *hid, char *tty)
 {
     int fd;
     char *tp;
-    struct utmp data;
+    struct utmpx data;
 
     gethostname(hid, MAXHOSTNAMELEN);
     hid[MAXHOSTNAMELEN] = '\0';
