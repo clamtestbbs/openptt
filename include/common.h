@@ -25,7 +25,7 @@
 #define FN_TICKET       "etc/ticket"
 
 #define MSG_DEL_CANCEL  "取消刪除"
-#define MSG_SELECT_BOARD          "\033[7m【 選擇看板 】\033[m\n" \
+#define MSG_SELECT_BOARD          "\033[7m【 選擇看板 】\033[0m\n" \
                                   "請輸入看板名稱(按空白鍵自動搜尋)："
 #define MSG_CLOAKED     "哈哈！我隱形了！看不到勒... :P"
 #define MSG_UNCLOAK     "我要重現江湖了...."
