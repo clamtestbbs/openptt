@@ -12,6 +12,7 @@
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <sys/time.h>
+#include <time.h>
 #include <sys/resource.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
@@ -1096,7 +1097,7 @@ chat_do_user_list(cu, msg, theroom)
     if (common_client_command)
 	send_to_user(cu, "", 0, MSG_USERLISTSTART);
     else
-	send_to_user(cu, "[7m ²á¤Ñ¥N¸¹¢x¨Ï¥ÎªÌ¥N¸¹  ¢x²á¤Ñ«Ç [m", 0, MSG_MESSAGE);
+	send_to_user(cu, "[7m ²á¤Ñ¥N¸¹¢x¨Ï¥ÎªÌ¥N¸¹  ¢x²á¤Ñ«Ç [0m", 0, MSG_MESSAGE);
 
     for (user = mainuser; user; user = user->unext)
     {
@@ -1210,7 +1211,7 @@ chat_map_chatids(cu, whichroom)
     /* myroom = cu->room; */
     myroom = whichroom;
     send_to_user(cu,
-		 "[7m ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹  ¢x ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹  ¢x ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹ [m", 0, MSG_MESSAGE);
+		 "[7m ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹  ¢x ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹  ¢x ²á¤Ñ¥N¸¹ ¨Ï¥ÎªÌ¥N¸¹ [0m", 0, MSG_MESSAGE);
 
     c = 0;
 

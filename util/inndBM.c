@@ -175,7 +175,7 @@
 
 int main()
 {
-    fpos_t B_pos = 0;
+    fpos_t *B_pos = 0;
     FILE *b_fp, *i_fp;
     char str1[128], str2[128], *bname;
 
@@ -202,7 +202,7 @@ int main()
 		break;
 	    }
 	}
-	fsetpos(b_fp, &B_pos);
+	fsetpos(b_fp, B_pos);
     }
     fclose(b_fp);
     fclose(i_fp);
