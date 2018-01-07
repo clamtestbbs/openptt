@@ -175,7 +175,7 @@ int more(char *fpath, int promptend) {
 			header = 1;
 			
 			prints("\033[36m%s\033[m\n", msg_seperator);
-			line = pos = 4;
+			line = pos = 5;
 		    }
 		}
 		lino = pos;
