@@ -4,14 +4,14 @@ BBSHOME?=$(HOME)
 
 # FreeBSD
 CC_FreeBSD=	gcc
-CFLAGS_FreeBSD=	-pipe -Wall -g -O3 -DHAVE_SETPROCTITLE -DBBSHOME='"$(BBSHOME)"' -I../include
+CFLAGS_FreeBSD=	-m32 -pipe -Wall -g -O3 -DHAVE_SETPROCTITLE -DBBSHOME='"$(BBSHOME)"' -I../include
 LIBS_FreeBSD=
 LIBMAIL_FreeBSD=-lutil
 LIBCHAT_FreeBSD=
 
 # Linux
 CC_linux=	gcc
-CFLAGS_linux=	-pipe -Wall -g -O3 -DHAVE_DES_CRYPT -DBBSHOME='"$(BBSHOME)"' -I../include
+CFLAGS_linux=	-m32 -pipe -Wall -g -O3 -DHAVE_DES_CRYPT -DBBSHOME='"$(BBSHOME)"' -I../include
 LIBS_linux=	-lresolv
 LIBMAIL_linux=	
 LIBCHAT_linux=	-lcrypt
