@@ -16,7 +16,7 @@ close DATE;
 # Header
 # ¤º®e
 #open(WEATHER, "/usr/local/bin/lynx -dump http://www.dashin.com.tw/bulletin_board/today_stock_price.htm |"); while (<WEATHER>) {
-open(WEATHER, "/usr/local/bin/lynx -dump http://quote.dashin.com.tw/today_stock_price.htm |"); while(<WEATHER>) {
+open(WEATHER, "/bin/lynx -dump 'http://www.twse.com.tw/exchangeReport/MI_INDEX?response=html&date=20180119&type=MS' | iconv -f utf8 -t big5|"); while(<WEATHER>) {
   print BBSPOST if ($_ ne "\n");
 }
 close WEATHER;
