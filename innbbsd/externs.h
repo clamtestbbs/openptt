@@ -9,7 +9,7 @@
 #  endif
 # endif
 
-char *fileglue ARG((char *, ...));
+//char *fileglue ARG((char *, ...));
 char *ascii_date ARG(());
 char **split ARG((char *, char *));
 

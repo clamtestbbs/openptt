@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <varargs.h>
+#include <stdarg.h>
 #define MAXARGS     100
 
 /*   isfile is called by
@@ -25,16 +25,13 @@ FILE *fp;
     fileglue("%s/%s",home,".newsrc");
 */
 
-char *fileglue(va_alist)
-va_dcl
+char *fileglue(register char *fmt,...)
 {
 	va_list ap;
-	register char* fmt;
 	static char *newstring;
         static char gluebuffer[8192];
 
-	va_start(ap);
-	fmt = va_arg(ap, char *) ;
+	va_start(ap, fmt);
         vsprintf(gluebuffer, fmt, ap);
 	newstring = gluebuffer;
 	va_end(ap);
@@ -71,16 +68,15 @@ char* filename;
 	return 1;
 }
 
-int isfilev(va_alist)
-va_dcl
+int isfilev(char *p,...)
 {
 	va_list ap;
 	struct stat st;
-	char *p;
-	va_start(ap);
+	
+	va_start(ap,p);
 
 	FILEBUF[0]='\0';
-        while ((p = va_arg(ap, char *)) != (char *)0) {
+        while ( p != (char *)0) {
 		strcat(FILEBUF,p);
 	}
 	printf("file %s\n",FILEBUF);
@@ -100,16 +96,14 @@ char* filename;
 	return 1;
 }
 
-int isdirv(va_alist)
-va_dcl
+int isdirv(char *p,...)
 {
 	va_list ap;
 	struct stat st;
-	char *p;
-	va_start(ap);
+	va_start(ap,p);
 
 	FILEBUF[0]='\0';
-        while ((p = va_arg(ap, char *)) != (char *)0) {
+        while ( p != (char *)0) {
 		strcat(FILEBUF,p);
 	}
 
@@ -125,16 +119,15 @@ char* filename;
         return st.st_mtime;
 }
 
-unsigned long mtimev(va_alist)
-va_dcl
+unsigned long mtimev(char *p,...)
 {
 	va_list ap;
 	struct stat st;
-	char *p;
-	va_start(ap);
+	
+	va_start(ap,p);
 
 	FILEBUF[0]='\0';
-        while ((p = va_arg(ap, char *)) != (char *)0) {
+        while ( p != (char *)0) {
 		strcat(FILEBUF,p);
 	}
 
@@ -150,16 +143,13 @@ char *filename;
         return st.st_atime;
 }
 
-unsigned long atimev(va_alist)
-va_dcl
+unsigned long atimev(char *p,...)
 {
 	va_list ap;
 	struct stat st;
-	char *p;
-	va_start(ap);
-
+	va_start(ap,p);
 	FILEBUF[0]='\0';
-        while ((p = va_arg(ap, char *)) != (char *)0) {
+        while (p != (char *)0) {
 		strcat(FILEBUF,p);
 	}
 

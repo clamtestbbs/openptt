@@ -100,7 +100,7 @@ extern long		atol();
 extern time_t		time();
 extern unsigned long	inet_addr();
 extern FREEVAL		free();
-extern POINTER		malloc();
+//extern POINTER		malloc();
 extern POINTER		realloc();
 #if	defined(ACT_MMAP)
 extern char		*mmap();

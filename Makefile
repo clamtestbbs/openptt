@@ -1,7 +1,4 @@
-#We can use this line again when innbbsd is fixed
-#SUBDIR=	mbbsd util innbbsd
-
-SUBDIR=	mbbsd util 
+SUBDIR=	mbbsd util innbbsd
 BBSHOME?=$(HOME)
 
 all install clean:

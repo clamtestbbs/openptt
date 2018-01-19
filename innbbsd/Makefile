@@ -14,7 +14,7 @@ LASTVERSION=0.50beta-3
 ADMINUSER= root@your.domain.name
 BBSHOME?=$(HOME)
 BBS_SRC = ..
-TARGET  = $(INNBBSD) $(BBSNNRP) $(BBSLINK)
+TARGET  = $(INNBBSD)
 ####################################################
 CC=gcc
 INSTALL=cp
@@ -55,7 +55,6 @@ LINKOBJS = bbslink.o pmain.o inntobbs.o echobbslib.o connectsock.o file.o port.o
 LINKOBJS2 = bbslink2.o pmain.o inntobbs.o echobbslib.o connectsock.o file.o port.o
 CTLOBJS  = ctlinnbbsd.o pmain.o bbslib.o connectsock.o file.o 
 INNBBSD  = innbbsd mkhistory bbsnnrp ctlinnbbsd $(BBSLINK)
-BBSNNRP  = bbsnnrp
 BBSLINK  = bbslink
 BBSLINK2  = bbslink2
 EXES     = $(TARGET)
