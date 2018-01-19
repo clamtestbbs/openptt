@@ -28,7 +28,7 @@ BBS_REC = $(BBS_SRC)/mbbsd/record.o r_port.o
 #
 ###############
 DEBUGOBJ = /usr/lib/debug/mallocmap.o
-CFLAGS= -c -I. -I$(BBS_SRC)/include -I$(BBS_SRC)/mbbsd -D$(BBS_DEP) \
+CFLAGS= -m32 -c -I. -I$(BBS_SRC)/include -I$(BBS_SRC)/mbbsd -D$(BBS_DEP) \
 $(EXTRAFLAGS) -DDBZDEBUG -DBBSHOME='"$(BBSHOME)"' \
 -D_PATH_BBSHOME=\"$(BBSHOME)\" \
 -DVERSION=\"$(VERSION)\" -DADMINUSER=\"$(ADMINUSER)\" 
