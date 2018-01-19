@@ -29,7 +29,6 @@ CPROGS=	bbsmail BM_money post account birth deluserfile expire mandex\
 	merge_passwd merge_board
 PROGS=	$(CPROGS) BM_money.sh backpasswd.sh mailog.sh opendice.sh\
 	openticket.sh stock.sh topsong.sh weather.sh stock.perl weather.perl\
-	cvslog.sh
 
 all: $(PROGS)
 
