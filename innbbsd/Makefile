@@ -19,7 +19,7 @@ TARGET  = $(INNBBSD)
 CC=gcc
 INSTALL=cp
 #
-OPT= -O3 -s -pipe -fomit-frame-pointer
+OPT= -m32 -O3 -s -pipe -fomit-frame-pointer
 
 BBS_DEP = MapleBBS 
 BBS_REC = $(BBS_SRC)/mbbsd/record.o r_port.o
