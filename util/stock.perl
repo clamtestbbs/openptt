@@ -16,7 +16,7 @@ close DATE;
 # Header
 # 內容
 #open(WEATHER, "/usr/local/bin/lynx -dump http://www.dashin.com.tw/bulletin_board/today_stock_price.htm |"); while (<WEATHER>) {
-open(WEATHER, "/bin/lynx -dump 'http://www.twse.com.tw/exchangeReport/MI_INDEX?response=html&date=20180119&type=MS' | iconv -f utf8 -t big5|"); while(<WEATHER>) {
+open(WEATHER, "/bin/lynx -dump \"http://www.twse.com.tw/exchangeReport/MI_INDEX?response=html&date=`/bin/date +%Y%m%d`&type=MS\" | iconv -f utf8 -t big5|"); while(<WEATHER>) {
   print BBSPOST if ($_ ne "\n");
 }
 close WEATHER;
@@ -25,7 +25,7 @@ close WEATHER;
 print BBSPOST "\n--\n";
 print BBSPOST "我是beagle所有可愛的小餅乾...跨海為Ptt服務\n";
 print BBSPOST "--\n";
-print BBSPOST "☆ [Origin: ◎果醬小站◎] [From: [藍莓鬆餅屋]       ] ";
+print BBSPOST "☆ [Origin: ◎果醬小站◎] [From: [藍莓鬆餅屋]       \n\n";
 
 close BBSPOST;
 
