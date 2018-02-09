@@ -47,10 +47,10 @@
 
 #天氣股票
 0 5,11,17,23 * * * bin/weather.sh > /dev/null
-20 12 * * * bin/stock.sh > /dev/null
+20 17 * * * bin/stock.sh > /dev/null
 
 # 每個月一號早上 3:50 , 將 BBS 系統中長度為零的檔案砍掉
-50 3 1 * * ( /usr/bin/find /home1/bbs -size 0 -exec rm -f {} ';' )
+50 3 1 * * ( /usr/bin/find /home/bbs -size 0 -exec rm -f {} ';' )
 
 #每天早上 6:30 把bbs中的home和passwords備份
 30 6 * * * bin/backpasswd.sh > /dev/null
