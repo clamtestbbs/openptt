@@ -570,7 +570,7 @@ commands_t cmdlist[] = {
     {Talk, 0,                         "TTalk         【 休閒聊天區 】"},
     {User, 0,                         "UUser         【 個人設定區 】"},
     {Xyz, 0,                          "XXyz          【 系統工具區 】"},
-    {Play_Play,0,                     "PPlay         【 遊樂場/大學查榜】"},
+    {Play_Play,0,                     "PPlay         【 娛樂與情報 】"},
     {Name_Menu,PERM_LOGINOK,          "NNamelist     【 編特別名單 】"},
     {Goodbye, 0,                      "GGoodbye       離開，再見……"},
     {NULL, 0, NULL}
