@@ -486,11 +486,6 @@ int p_sysinfo() {
     cpuload(buf);
     outs("CPU 負荷 : ");
     outs(buf);
-    
-    p = swapused(&total,&used);
-    sprintf(buf, " 虛擬記憶體使用率: %.3f  (全部:%ldMB 用掉:%ldMB)\n",
-	    p, total >> 20, used >> 20);
-    outs(buf);
     pressanykey();
     return 0;
 }

@@ -1045,7 +1045,7 @@ static void give_id_money(char *user_id, int money, FILE *log_fp, char *mail_tit
 //      prints("%s %d", user_id, money);
         fprintf(log_fp, "%ld %s %d", t, user_id, money);
         sprintf(tt, "%s : %d ptt ¹ô", mail_title, money);
-        mail_id(user_id, tt, "~bbs/etc/givemoney.why", "[PTT »È¦æ]");
+        mail_id(user_id, tt, BBSHOME "/etc/givemoney.why", "[PTT »È¦æ]");
     }
 }            
 

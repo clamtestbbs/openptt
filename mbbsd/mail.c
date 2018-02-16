@@ -83,11 +83,21 @@ int setforward() {
 
 int built_mail_index() {
     char genbuf[128];
-    
+
+    move(b_lines - 4, 0);
+    outs("¥»¥\\¯à¥u¦b«H½cÀÉ·´·l®É¨Ï¥Î¡A[1;33mµLªk[m±Ï¦^³Q§R°£ªº«H¥ó¡C\n"
+	 "°£«D±z²M·¡³o­Ó¥\\¯àªº§@¥Î¡A§_«h [1;33m ½Ð¤£­n¨Ï¥Î[m¡C\n"
+	 "Äµ§i¡G¥ô·Nªº¨Ï¥Î±N¾É­P[1;33m¤£¥i¹w´Áªºµ²ªG[m¡I\n");
+    getdata(b_lines - 1, 0,
+	    "½T©w­««Ø«H½c?(y/N)", genbuf, 3,
+	    LCECHO);
+    if (genbuf[0] != 'y')
+        return FULLUPDATE; 
+
     sprintf(genbuf, BBSHOME "/bin/buildir " BBSHOME "/home/%c/%s",
 	    cuser.userid[0], cuser.userid);
-    move(22,0);
-    prints("\033[1;31m¤w¸g³B²z§¹²¦!! ½Ñ¦h¤£«K ·q½Ð­ì½Ì~\033[m");pressanykey();
+    move(b_lines - 2 , 0);
+    outs("[1;31m¤w¸g³B²z§¹²¦!! ½Ñ¦h¤£«K ·q½Ð­ì½Ì~[m          ");pressanykey();
     system(genbuf);
     return 0;
 }
@@ -345,9 +355,11 @@ static void multi_list(int *reciper) {
     while(1) {
 	stand_title("¸s²Õ±H«H¦W³æ");
 	ShowNameList(3, 0, msg_cc);
-	getdata(1, 0,
-		"(I)¤Þ¤J¦n¤Í (O)¤Þ¤J¤W½u³qª¾ (N)¤Þ¤J·s¤å³¹³qª¾ "
-		"(0-9)¤Þ¤J¨ä¥L¯S§O¦W³æ\n"
+    move(1,0); /*­×¥¿ by AK*/
+    prints("(I)¤Þ¤J¦n¤Í (O)¤Þ¤J½u¤W³qª¾ (0-9)¤Þ¤J¨ä¥L¯S§O¦W³æ\n");
+    getdata(2, 0,
+                /*"(I)¤Þ¤J¦n¤Í (O)¤Þ¤J¤W½u³qª¾ (N)¤Þ¤J·s¤å³¹³qª¾ "
+                "(0-9)¤Þ¤J¨ä¥L¯S§O¦W³æ\n"*/
 		"(A)¼W¥[     (D)§R°£         (M)½T»{±H«H¦W³æ   (Q)¨ú®ø ¡H[M]",
 		genbuf, 4, LCECHO);
 	switch(genbuf[0]) {
