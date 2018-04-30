@@ -98,6 +98,7 @@ static void reapchild(int sig) {
 "【" BBSNAME "】◎ " ORGNAME "流行網 ◎(" MYHOSTNAME ")\r\n"\
 "  調幅(" MYIP ") "
 
+#ifndef __CYGWIN__
 /* check load and print approriate banner string in buf */
 static int chkload(char *buf) {
     char cpu_load[30];
@@ -118,6 +119,7 @@ static int chkload(char *buf) {
 
     return 0;
 }
+#endif // __CYGWIN__
 
 extern userec_t cuser;
 
@@ -1298,12 +1300,14 @@ static int check_ban_and_load(int fd)
     static int overload;	/* overload or banned, update every 1 sec  */
     static int banned;
     
+#ifndef __CYGWIN__
     if((time(0) - chkload_time) > 1) {
 	overload = chkload(buf);
 	banned = !access(BBSHOME "/BAN",R_OK) &&
 	    strcmp(fromhost, "localhost") != 0;
 	chkload_time = time(0);
     }
+#endif
 
     write(fd, buf, strlen(buf));
 

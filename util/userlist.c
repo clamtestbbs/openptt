@@ -4,6 +4,12 @@
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+
+#ifdef __CYGWIN__
+#define SHM_R 0400/* or S_IRUGO from <linux/stat.h> */
+#define SHM_W 0200/* or S_IWUGO from <linux/stat.h> */
+#endif
+
 #include "config.h"
 #include "pttstruct.h"
 

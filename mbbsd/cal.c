@@ -483,7 +483,9 @@ int p_sysinfo() {
     
     move(b_lines-1,0);
     clrtoeol();
+#ifndef __CYGWIN__
     cpuload(buf);
+#endif
     outs("CPU ­t²ü : ");
     outs(buf);
     pressanykey();
